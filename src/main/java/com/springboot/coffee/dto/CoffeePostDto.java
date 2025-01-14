@@ -1,10 +1,13 @@
 package com.springboot.coffee.dto;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-
+@Getter
+@Setter
 public class CoffeePostDto {
     @NotBlank
     private String korName;
@@ -16,6 +19,8 @@ public class CoffeePostDto {
 
     @Range(min= 100, max= 50000)
     private int price;
+
+    private String coffeeCode;
 
     public String getKorName() {
         return korName;
